@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
-  "version": "0.1.1",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "name": "nuxt-simple-sitemap",
+  "version": "0.1.0",
+  "description": "Simple sitemap module for Nuxt",
+  "repository": "https://github.com/nazarii-semeniuk/nuxt-simple-sitemap",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -28,7 +28,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish --access public && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run --silent false",
     "test:watch": "vitest watch",
