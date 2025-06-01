@@ -1,0 +1,33 @@
+import { defineEventHandler, setResponseHeader } from 'h3';
+import { useRuntimeConfig } from '#imports';
+import { generateSitemap } from '../builder';
+import { filterSources } from '../utils/filterSources';
+import { prepareHostname } from '../utils/prepareHostname';
+
+export default defineEventHandler(async (e) => {
+    const { sources: staticSources } = await import('#simpleSitemap/staticPages.mjs');
+
+    const { sources: includeSources } = await import('#simpleSitemap/includePages.mjs');
+
+    const { simpleSitemap: sitemapConfig } = useRuntimeConfig();
+
+    const sources = filterSources([...staticSources, ...includeSources], sitemapConfig.exclude);
+
+    let { hostname } = sitemapConfig;
+
+    if (!hostname) {
+        const origin = e.node.req.headers.origin || e.node.req.headers.host;
+
+        if (!origin) {
+            return '<!-- No hostname provided for sitemap and can not be extracted from headers -->';
+        }
+
+        hostname = prepareHostname(origin.replace(/\/$/, ''));
+    }
+
+    const sitemap = generateSitemap(sources, hostname);
+
+    setResponseHeader(e, 'Content-Type', 'application/xml');
+
+    return sitemap;
+});
