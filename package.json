@@ -1,6 +1,6 @@
 {
   "name": "nuxt-simple-sitemap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple sitemap module for Nuxt",
   "repository": "https://github.com/nazarii-semeniuk/nuxt-simple-sitemap",
   "license": "MIT",
