@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.2.1...v0.2.2)
+
+### 🩹 Fixes
+
+- Renames simpleSitemap name to basicSitemap ([018fa15](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/commit/018fa15))
+
+### ❤️ Contributors
+
+- Nazarii Semeniuk <qnazar.semenyuk@gmail.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.1.3...v0.2.1)
