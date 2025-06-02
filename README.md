@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-basic-sitemap',
   ],
-  simpleSitemap: {
+  basicSitemap: {
     hostname: 'https://example.com',
     exclude: ['/to-exclude'],
     trailingSlash: true,
@@ -115,7 +115,7 @@ type SitemapItem = {
 // nuxt.config.ts
 {
 ...
-  simpleSitemap: {
+  basicSitemap: {
     hostname: 'https://example.com',
     trailingSlash: true,
     include: [
@@ -137,7 +137,7 @@ type SitemapItem = {
 // nuxt.config.ts
 {
 ...
-  simpleSitemap: {
+  basicSitemap: {
     hostname: 'https://example.com',
     staticPagesOptions: [
       {
@@ -156,7 +156,7 @@ type SitemapItem = {
 // nuxt.config.ts
 {
 ...
-  simpleSitemap: {
+  basicSitemap: {
     hostname: 'https://example.com',
     includeStaticPages: false,
     include: async () => {

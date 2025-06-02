@@ -2,7 +2,7 @@ import MyModule from '../../../src/module';
 
 export default defineNuxtConfig({
     modules: [MyModule],
-    simpleSitemap: {
+    basicSitemap: {
         hostname: 'https://example.com',
         exclude: ['/to-exclude'],
         include: [

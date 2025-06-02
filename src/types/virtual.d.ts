@@ -1,7 +1,7 @@
-declare module '#simpleSitemap/staticPages.mjs' {
+declare module '#basicSitemap/staticPages.mjs' {
     export const sources: string[];
 }
 
-declare module '#simpleSitemap/includePages.mjs' {
+declare module '#basicSitemap/includePages.mjs' {
     export const sources: Array<string | import('./ModuleOptions').SitemapItem>;
 }

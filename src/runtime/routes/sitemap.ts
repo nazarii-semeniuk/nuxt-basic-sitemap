@@ -6,11 +6,11 @@ import { prepareHostname } from '../utils/prepareHostname';
 import { addTrailingSlashToSources } from '../utils/addTrailingSlashToSources';
 
 export default defineEventHandler(async (e) => {
-    const { sources: staticSources } = await import('#simpleSitemap/staticPages.mjs');
+    const { sources: staticSources } = await import('#basicSitemap/staticPages.mjs');
 
-    const { sources: includeSources } = await import('#simpleSitemap/includePages.mjs');
+    const { sources: includeSources } = await import('#basicSitemap/includePages.mjs');
 
-    const { simpleSitemap: sitemapConfig } = useRuntimeConfig();
+    const { basicSitemap: sitemapConfig } = useRuntimeConfig();
 
     const sources = filterSources([...staticSources, ...includeSources], sitemapConfig.exclude);
 

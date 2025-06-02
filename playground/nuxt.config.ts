@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
     modules: ['../src/module'],
     devtools: { enabled: true },
-    simpleSitemap: {
+    basicSitemap: {
         hostname: 'example.com',
         enabled: true,
         trailingSlash: true,

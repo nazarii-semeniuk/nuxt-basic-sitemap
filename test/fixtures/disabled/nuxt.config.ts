@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: [
     MyModule,
   ],
-  simpleSitemap: {
+  basicSitemap: {
     enabled: false,
   }
 })

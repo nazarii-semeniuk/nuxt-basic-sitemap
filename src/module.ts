@@ -9,8 +9,8 @@ import { populateStaticPagesWithOptions } from './runtime/utils/populateStaticPa
 
 export default defineNuxtModule<ModuleOptions>({
     meta: {
-        name: 'nuxt-simple-sitemap',
-        configKey: 'simpleSitemap',
+        name: 'nuxt-basic-sitemap',
+        configKey: 'basicSitemap',
         compatibility: {
             nuxt: '>=3.10.0',
             bridge: false,
@@ -32,7 +32,7 @@ export default defineNuxtModule<ModuleOptions>({
             trailingSlash: options.trailingSlash ?? false,
         };
 
-        nuxt.options.runtimeConfig.simpleSitemap = runtimeConfig;
+        nuxt.options.runtimeConfig.basicSitemap = runtimeConfig;
 
         let staticPages: Array<string | SitemapItem> = [];
         nuxt.hook('pages:resolved', (pages) => {
@@ -65,7 +65,7 @@ export default defineNuxtModule<ModuleOptions>({
         });
 
         nuxt.hook('nitro:config', (nitroConfig) => {
-            nitroConfig.virtual!['#simpleSitemap/staticPages.mjs'] = () => {
+            nitroConfig.virtual!['#basicSitemap/staticPages.mjs'] = () => {
                 staticPages.sort((a, b) => {
                     const aUrl = typeof a === 'string' ? a : a.url;
                     const bUrl = typeof b === 'string' ? b : b.url;
@@ -79,7 +79,7 @@ export default defineNuxtModule<ModuleOptions>({
                 return `export const sources = ${JSON.stringify(options.includeStaticPages ? staticPages : [], null, 4)}`;
             };
 
-             nitroConfig.virtual!['#simpleSitemap/includePages.mjs'] = async () => {
+             nitroConfig.virtual!['#basicSitemap/includePages.mjs'] = async () => {
                 const sources = [];
 
                 if (typeof options.include === 'function') {

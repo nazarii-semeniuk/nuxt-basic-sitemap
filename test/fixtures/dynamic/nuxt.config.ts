@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: [
     MyModule,
   ],
-  simpleSitemap: {
+  basicSitemap: {
     includeStaticPages: false,
     include: async () => {
       await new Promise(resolve => setTimeout(resolve, 1000))
