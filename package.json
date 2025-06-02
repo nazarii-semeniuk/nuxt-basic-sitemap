@@ -1,6 +1,6 @@
 {
   "name": "nuxt-basic-sitemap",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Basic sitemap module for Nuxt",
   "repository": "https://github.com/nazarii-semeniuk/nuxt-basic-sitemap",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release --major && npm publish --access public && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish --access public && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run --silent false",
     "test:watch": "vitest watch",
