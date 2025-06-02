@@ -46,4 +46,9 @@ describe('Basic', async () => {
         expect(response).toContain('<loc>https://example.com/static-page</loc>');
         expect(response).toContain('<changefreq>yearly</changefreq>');
     });
+
+    it('ignores dynamic routes', async () => {
+        const response = await $fetch('/sitemap.xml');
+        expect(response).not.toContain('<loc>https://example.com/dynamic/:slug()</loc>');
+    });
 });

@@ -45,6 +45,11 @@ export default defineNuxtModule<ModuleOptions>({
                 while (stack.length > 0) {
                     const { parentPath, page: currentPage } = stack.pop()!;
 
+                    if (currentPage.path.includes(':')) {
+                        // Skip dynamic routes
+                        continue;
+                    }
+
                     const fullPath =
                         parentPath +
                         (currentPage.path.startsWith('/') ? '' : '/') +
