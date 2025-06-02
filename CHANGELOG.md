@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.0
+
+[compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.4.0...v0.5.0)
+
+### 🩹 Fixes
+
+- Filters dynamic routes from static pages ([51db26b](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/commit/51db26b))
+
+### ❤️ Contributors
+
+- Nazarii Semeniuk <qnazar.semenyuk@gmail.com>
+
 ## v0.4.0
 
 [compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.3.1...v0.4.0)
