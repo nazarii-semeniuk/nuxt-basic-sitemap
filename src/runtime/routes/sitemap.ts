@@ -3,6 +3,7 @@ import { useRuntimeConfig } from '#imports';
 import { generateSitemap } from '../builder';
 import { filterSources } from '../utils/filterSources';
 import { prepareHostname } from '../utils/prepareHostname';
+import { addTrailingSlashToSources } from '../utils/addTrailingSlashToSources';
 
 export default defineEventHandler(async (e) => {
     const { sources: staticSources } = await import('#simpleSitemap/staticPages.mjs');
@@ -13,7 +14,8 @@ export default defineEventHandler(async (e) => {
 
     const sources = filterSources([...staticSources, ...includeSources], sitemapConfig.exclude);
 
-    let { hostname } = sitemapConfig;
+    let hostname = sitemapConfig.hostname;
+    const { trailingSlash } = sitemapConfig;
 
     if (!hostname) {
         const origin = e.node.req.headers.origin || e.node.req.headers.host;
@@ -25,7 +27,7 @@ export default defineEventHandler(async (e) => {
         hostname = prepareHostname(origin.replace(/\/$/, ''));
     }
 
-    const sitemap = generateSitemap(sources, hostname);
+    const sitemap = generateSitemap(trailingSlash ? addTrailingSlashToSources(sources) : sources, hostname);
 
     setResponseHeader(e, 'Content-Type', 'application/xml');
 

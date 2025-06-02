@@ -21,14 +21,16 @@ export default defineNuxtModule<ModuleOptions>({
         includeStaticPages: true,
         exclude: [],
         include: [],
+        trailingSlash: false,
     },
     async setup(options, nuxt) {
         const resolver = createResolver(import.meta.url);
 
         const runtimeConfig: RuntimeConfig = {
             hostname: options.hostname ? prepareHostname(options.hostname) : '',
-            exclude: options.exclude
-        }
+            exclude: options.exclude,
+            trailingSlash: options.trailingSlash ?? false,
+        };
 
         nuxt.options.runtimeConfig.simpleSitemap = runtimeConfig;
 

@@ -22,5 +22,6 @@ export type ModuleOptions = {
     | (() => Promise<Array<string | SitemapItem>>)
     | (() => Array<string | SitemapItem>);
   includeStaticPages: boolean;
-  staticPagesOptions?: Array<SitemapItem>
+  staticPagesOptions?: Array<SitemapItem>;
+  trailingSlash?: boolean;
 };

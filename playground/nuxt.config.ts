@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     simpleSitemap: {
         hostname: 'example.com',
         enabled: true,
+        trailingSlash: true,
         exclude: ['/test',],
         include: [
             '/blog',
