@@ -6,6 +6,7 @@
   "license": "MIT",
   "type": "module",
   "keywords": ["nuxt sitemap", "nuxt", "sitemap", "nuxt simple sitemap", "nuxt basic sitemap"],
+  "author": "Nazarii Semeniuk <qnazar.semenyuk@gmail.com>",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
