@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.1.3...v0.2.1)
+
+### 🏡 Chore
+
+- Updates README ([350d782](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/commit/350d782))
+- Updates package.json ([59ec53a](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/commit/59ec53a))
+
+### ❤️ Contributors
+
+- Nazarii Semeniuk <qnazar.semenyuk@gmail.com>
+
 ## v0.1.3
 
 [compare changes](https://github.com/nazarii-semeniuk/nuxt-basic-sitemap/compare/v0.1.2...v0.1.3)
